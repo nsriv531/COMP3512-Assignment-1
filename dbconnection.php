@@ -1,6 +1,6 @@
 <?php
 // Specify the path to your SQLite database
-$dbPath = 'C:\\Users\\sriva\\Documents\\COMP3512-Assignment-1\\f1';
+$dbPath = 'C:\xampp\htdocs\COMP3512-Assignment-1\f1';
 
 try {
     // Create a new SQLite3 database connection
