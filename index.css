@@ -1,0 +1,107 @@
+/* Center the content and align items properly */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.header h1 {
+    font-family: 'Lobster', cursive;
+    font-size: 36px;
+    margin: 0;
+    color: #ff69b4;
+}
+
+.nav-links {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.nav-links a {
+    color: #ff69b4;
+    text-decoration: none;
+    margin-left: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    padding: 5px 10px;
+    border: 1px solid #ff69b4;
+    border-radius: 3px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #ff69b4;
+    color: white;
+}
+
+.content {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: flex-start;
+    flex-direction: column;  /* Stack elements vertically */
+    max-width: 1000px;       /* Set a max width for the content area */
+    margin: 50px auto;       /* Center the content area with auto margins */
+    padding: 20px;
+}
+
+.description {
+    width: 100%; /* Make the description take the full width */
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center text inside description */
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff69b4;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #ff3385;
+}
+
+.link {
+    display: block;
+    margin-top: 10px;
+    color: #ff69b4;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.image-section {
+    width: 100%; /* Make the image section take the full width */
+    background-color: #eaeaea;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.image-section p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #555;
+}
