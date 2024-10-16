@@ -1,6 +1,6 @@
 <?php
 // Include the database connection
-include('../db_connect.php');
+include('../dbconnection.php');
 
 // Check if 'ref' is provided to fetch results for a specific race
 if (isset($_GET['ref'])) {
