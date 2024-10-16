@@ -1,6 +1,6 @@
 <?php
 // Specify the path to your SQLite database
-$dbPath = 'C:\xampp\htdocs\COMP3512-Assignment-1\f1';
+$dbPath = 'C:\xampp\htdocs\COMP3512-Assignment-1\f1.db';
 
 try {
     // Create a new SQLite3 database connection
@@ -10,15 +10,16 @@ try {
     $query = 'SELECT SQLITE_VERSION() AS version';
     $result = $db->query($query);
 
-    // Fetch and display the result
+    // Fetch and display the result (for debugging purposes)
     $row = $result->fetchArray();
     echo "SQLite version: " . $row['version'];
 
 } catch (Exception $e) {
     // Handle connection errors
     echo "Failed to connect to the database: " . $e->getMessage();
+    exit(); // Stop further script execution on connection failure
 }
 
-// Close the connection (optional, as PHP automatically closes connections when script ends)
-$db->close();
+// Do not close the connection here, as other scripts may need it
+// $db->close(); // REMOVE this line
 ?>
