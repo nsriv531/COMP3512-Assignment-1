@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>F1 Dashboard Project</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="https://fav.farm/🏎️" />
     <!-- Import Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Lobster&display=swap" rel="stylesheet">
 </head>
@@ -24,8 +25,8 @@
             <a href="browse.php" class="button">Browse 2022 Season</a>
             <a href="browse.php" class="link">Link to browse page</a>
         </div>
-        <div class="image-section">
-            <p>Some type of relevant photo or image: could be a race car, a race circuit, a squirrel, whatever, it's up to you.</p>
+        <class="image-section">
+            <img src="https://i.pinimg.com/originals/08/33/4c/08334ce44a530ce81ba2ff9e5d29064b.gif"></img>
         </div>
     </div>
 </body>
