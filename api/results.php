@@ -14,7 +14,7 @@ header('Content-Type: application/json');
 if (isset($_GET['ref'])) {
     $ref = $_GET['ref'];
     $query = "
-        SELECT results.grid, drivers.driverRef, drivers.code, drivers.forename, drivers.surname, 
+        SELECT results.grid, results.laps, results.points, drivers.driverRef, drivers.code, drivers.forename, drivers.surname, 
                races.name as raceName, races.round, races.year, races.date, 
                constructors.name as constructorName, constructors.constructorRef, constructors.nationality
         FROM results
@@ -43,7 +43,7 @@ if (isset($_GET['ref'])) {
     // Fetch results for a specific driver
     $driver = $_GET['driver'];
     $query = "
-        SELECT results.grid, drivers.driverRef, drivers.code, drivers.forename, drivers.surname, 
+        SELECT results.laps, drivers.driverRef, drivers.code, drivers.forename, drivers.surname, 
                races.name as raceName, races.round, races.year, races.date, 
                constructors.name as constructorName, constructors.constructorRef, constructors.nationality
         FROM results

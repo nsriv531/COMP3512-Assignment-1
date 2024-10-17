@@ -118,7 +118,6 @@ echo "<pre>Results API Response: " . htmlspecialchars($results_response) . "</pr
                                 <td><?php echo htmlspecialchars($q['q1']); ?></td> <!-- Q1 Time -->
                     <td><?php echo htmlspecialchars($q['q2']); ?></td> <!-- Q2 Time -->
                     <td><?php echo htmlspecialchars($q['q3']); ?></td> <!-- Q3 Time -->
-                
                                 </tr>
                             <?php endforeach; ?>
                         <?php else: ?>
