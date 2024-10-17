@@ -2,6 +2,9 @@
 // Include the database connection
 include('../dbconnection.php');
 
+// Set the correct content type for JSON output
+header('Content-Type: application/json');
+
 // Check if 'ref' is provided to fetch results for a specific race
 if (isset($_GET['ref'])) {
     $ref = $_GET['ref'];
@@ -26,9 +29,10 @@ if (isset($_GET['ref'])) {
     }
     
     if (!empty($raceResults)) {
-        echo json_encode($raceResults);
+        // Pretty print the JSON output for race results
+        echo json_encode($raceResults, JSON_PRETTY_PRINT);
     } else {
-        echo json_encode(['error' => 'No results found for this race']);
+        echo json_encode(['error' => 'No results found for this race'], JSON_PRETTY_PRINT);
     }
 } elseif (isset($_GET['driver'])) {
     // Fetch results for a specific driver
@@ -54,12 +58,13 @@ if (isset($_GET['ref'])) {
     }
     
     if (!empty($driverResults)) {
-        echo json_encode($driverResults);
+        // Pretty print the JSON output for driver results
+        echo json_encode($driverResults, JSON_PRETTY_PRINT);
     } else {
-        echo json_encode(['error' => 'No results found for this driver']);
+        echo json_encode(['error' => 'No results found for this driver'], JSON_PRETTY_PRINT);
     }
 } else {
-    echo json_encode(['error' => 'Race or driver reference is required']);
+    echo json_encode(['error' => 'Race or driver reference is required'], JSON_PRETTY_PRINT);
 }
 
 // Close the database connection

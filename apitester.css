@@ -1,0 +1,97 @@
+/* Center the content and align items properly */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.header h1 {
+    font-family: 'Lobster', cursive;
+    font-size: 36px;
+    margin: 0;
+    color: #ff69b4;
+}
+
+.nav-links {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.nav-links a {
+    color: #ff69b4;
+    text-decoration: none;
+    margin-left: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    padding: 5px 10px;
+    border: 1px solid #ff69b4;
+    border-radius: 3px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #ff69b4;
+    color: white;
+}
+
+.content {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.api-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.api-table th, .api-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.api-table th {
+    background-color: #ff69b4;
+    color: white;
+    font-weight: bold;
+}
+
+.api-table td a {
+    color: #ff69b4;
+    text-decoration: none;
+}
+
+.api-table td a:hover {
+    text-decoration: underline;
+}
+
+.api-table tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+.api-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+.api-table td {
+    color: #333;
+}
