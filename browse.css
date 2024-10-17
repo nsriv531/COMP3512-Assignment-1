@@ -48,15 +48,16 @@ body {
 /* Main Container Styling */
 .container {
     display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
+    justify-content: center; /* Center content within container */
+    max-width: 1000px; /* Added max-width for boundary */
     margin: 50px auto;
     padding: 20px;
+    gap: 20px; /* Added gap between elements */
 }
 
 /* Race List Styling */
 .race-list {
-    width: 35%; /* Adjusted width for better alignment */
+    flex: 1 1 300px; /* Ensures the element grows but stays at least 300px wide */
     background-color: #fff;
     border-radius: 5px;
     padding: 20px;
@@ -77,7 +78,7 @@ body {
 }
 
 .race-list th, .race-list td {
-    padding: 12px; /* Increased padding for better spacing */
+    padding: 10px; /* Adjusted padding */
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
@@ -95,12 +96,12 @@ body {
 .race-list .button {
     background-color: #ff69b4;
     color: white;
-    padding: 7px 15px; /* Adjusted padding for better button size */
+    padding: 7px 15px; /* Adjusted padding */
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
     display: inline-block;
-    margin-left: 15px; /* Added margin to separate from text */
+    margin-left: 10px; /* Adjusted margin */
     text-align: center;
 }
 
@@ -110,12 +111,11 @@ body {
 
 /* Race Details Section */
 .race-details {
-    width: 60%; /* Adjusted width for better balance */
+    flex: 2 1 600px; /* Ensures the element grows but stays at least 600px wide */
     background-color: #fff;
     border-radius: 5px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-left: 20px;
 }
 
 .race-details h2, .race-details h3 {
@@ -139,8 +139,8 @@ body {
 }
 
 .race-details th, .race-details td {
-    padding: 12px; /* Increase padding for better spacing */
-    text-align: center; /* Center alignment for the table */
+    padding: 12px; /* Increased padding */
+    text-align: center; /* Center alignment */
     border-bottom: 1px solid #ddd;
 }
 
@@ -162,53 +162,6 @@ body {
     text-decoration: underline;
 }
 
-/* Driver Results Boxes */
-.driver-results {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.driver-box {
-    width: 30%;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    text-align: center;
-}
-
-.driver-box h4 {
-    font-size: 18px;
-    color: #ff69b4;
-    margin-bottom: 10px;
-}
-
-.driver-box p {
-    font-size: 16px;
-    color: #333;
-}
-
-/* Flex Layout for Positioning */
-.position-table {
-    display: flex;
-    justify-content: space-between;
-}
-
-.position-table .pos {
-    width: 30%;
-    text-align: center;
-}
-
-.position-table .pos h4 {
-    font-size: 20px;
-    color: #ff69b4;
-}
-
-.position-table .pos p {
-    font-size: 16px;
-}
-
 /* Media Query for Mobile */
 @media (max-width: 768px) {
     .container {
@@ -220,13 +173,5 @@ body {
         width: 100%;
         margin: 0;
         margin-bottom: 20px;
-    }
-
-    .position-table {
-        flex-direction: column;
-    }
-
-    .position-table .pos {
-        width: 100%;
     }
 }
