@@ -14,29 +14,29 @@ header('Content-Type: application/json');
 
 // Check if 'ref' is provided in the query string
 if (isset($_GET['ref'])) {
-    // Fetch the specified race
+    // Fetch the specified race using raceId
     $ref = $_GET['ref'];
     $query = "
-        SELECT races.name, races.round, races.year, races.date, circuits.name as circuitName, circuits.location, circuits.country
+        SELECT races.raceId, races.name, races.round, races.year, races.date, circuits.name as circuitName, circuits.location, circuits.country
         FROM races 
         JOIN circuits ON races.circuitId = circuits.circuitId
-        WHERE races.year = :ref
+        WHERE races.raceId = :ref
     ";
     $stmt = $db->prepare($query);
-    $stmt->bindValue(':ref', $ref, SQLITE3_TEXT);
+    $stmt->bindValue(':ref', $ref, SQLITE3_INTEGER); // Assuming raceId is an integer
     $result = $stmt->execute();
     
     $race = $result->fetchArray(SQLITE3_ASSOC);
     if ($race) {
-        // Pretty print the JSON output for a single race
+        // Pretty print the JSON output for a single race, including raceId
         echo json_encode($race, JSON_PRETTY_PRINT);
     } else {
         echo json_encode(['error' => 'Race not found'], JSON_PRETTY_PRINT);
     }
 } else {
-    // Fetch all races for 2022 season
+    // Fetch all races for 2022 season, include raceId in the result
     $query = "
-        SELECT races.name, races.round, races.year, races.date, circuits.name as circuitName, circuits.location, circuits.country
+        SELECT races.raceId, races.name, races.round, races.year, races.date, circuits.name as circuitName, circuits.location, circuits.country
         FROM races 
         JOIN circuits ON races.circuitId = circuits.circuitId
         WHERE races.year = 2022
@@ -49,7 +49,7 @@ if (isset($_GET['ref'])) {
         $races[] = $row;
     }
     
-    // Pretty print the JSON output for all races in 2022 season
+    // Pretty print the JSON output for all races in the 2022 season, including raceId
     echo json_encode($races, JSON_PRETTY_PRINT);
 }
 

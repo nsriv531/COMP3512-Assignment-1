@@ -1,7 +1,12 @@
 <?php
 // Include the database connection
+ob_start();
+
+// Include the database connection
 include('../dbconnection.php');
 
+// Clear any output before the header
+ob_clean();
 // Set the correct content type for JSON output
 header('Content-Type: application/json');
 

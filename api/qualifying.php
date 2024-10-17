@@ -1,7 +1,10 @@
 <?php
 // Include the database connection
+ob_start();
 include('../dbconnection.php');
 
+// Clear any output before the header
+ob_clean();
 // Set the correct content type for JSON output
 header('Content-Type: application/json');
 
@@ -10,7 +13,9 @@ if (isset($_GET['ref'])) {
     // Fetch the qualifying results for the specified race
     $ref = $_GET['ref'];
     $query = "
-        SELECT qualifying.position, drivers.driverRef, drivers.forename, drivers.surname, constructors.name as constructorName
+        SELECT qualifying.position, qualifying.q1, qualifying.q2, qualifying.q3, 
+               drivers.driverRef, drivers.forename, drivers.surname, 
+               constructors.name as constructorName, constructors.constructorRef
         FROM qualifying
         JOIN drivers ON qualifying.driverId = drivers.driverId
         JOIN constructors ON qualifying.constructorId = constructors.constructorId
@@ -18,7 +23,7 @@ if (isset($_GET['ref'])) {
         ORDER BY qualifying.position ASC
     ";
     $stmt = $db->prepare($query);
-    $stmt->bindValue(':ref', $ref, SQLITE3_INTEGER); // Assuming raceId is an integer
+    $stmt->bindValue(':ref', $ref, SQLITE3_INTEGER);
     $result = $stmt->execute();
     
     $qualifyingResults = [];
