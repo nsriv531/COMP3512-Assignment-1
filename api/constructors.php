@@ -25,7 +25,7 @@ if (isset($_GET['ref'])) {
                 $constructor = $result->fetchArray(SQLITE3_ASSOC);
                 if ($constructor) {
                     // Fetch the drivers and race results for this constructor
-                    $driver_query = "SELECT d.forename, d.surname, d.number, d.nationality, ra.round, ra.name AS raceName, r.grid, r.points
+                    $driver_query = "SELECT d.forename, d.surname, d.number, d.nationality, ra.round, ra.name AS raceName, r.position, r.points
                                      FROM drivers d
                                      JOIN results r ON d.driverID = r.driverID
                                      JOIN races ra ON r.raceId = ra.raceId

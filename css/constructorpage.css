@@ -74,8 +74,8 @@ body {
     color: #333;
 }
 
-/* Driver Results Section */
-.driver-results {
+/* Race Results Section */
+.race-results {
     width: 55%;
     background-color: #fff;
     padding: 20px;
@@ -83,67 +83,87 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.driver-results h2 {
+.race-results h2 {
     font-size: 24px;
     color: #333;
     margin-bottom: 20px;
 }
 
-.driver-results table {
+/* Updated Race Results Table Styling */
+.race-results table {
     width: 100%;
     border-collapse: collapse;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.driver-results th, .driver-results td {
-    padding: 12px 15px;  /* Increased padding for better readability */
+.race-results th, .race-results td {
+    padding: 15px;
     border-bottom: 1px solid #ddd;
-    word-wrap: break-word; /* Ensures long text breaks within the cell */
+    text-align: center; /* Center-align text for consistency */
 }
 
-/* Define specific column widths */
-.driver-results th:nth-child(1), .driver-results td:nth-child(1) {
-    width: 10%;  /* Round */
-}
-
-.driver-results th:nth-child(2), .driver-results td:nth-child(2) {
-    width: 35%;  /* Circuit */
-    text-align: left;  /* Left-align circuit name */
-}
-
-.driver-results th:nth-child(3), .driver-results td:nth-child(3) {
-    width: 25%;  /* Driver */
-    text-align: left;  /* Left-align driver names */
-}
-
-.driver-results th:nth-child(4), .driver-results td:nth-child(4) {
-    width: 15%;  /* Position */
-    text-align: center;  /* Center-align position */
-}
-
-.driver-results th:nth-child(5), .driver-results td:nth-child(5) {
-    width: 15%;  /* Points */
-    text-align: center;  /* Center-align points */
-}
-
-.driver-results th {
+.race-results th {
     background-color: #333;
     color: white;
-    text-align: center; /* Center text for table headers */
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
 }
 
-.driver-results td {
+.race-results td {
     color: #333;
+    font-size: 14px;
 }
 
-.driver-results tr:nth-child(even) {
-    background-color: #f9f9f9;  /* Alternating row background color */
+.race-results tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternating row background color */
 }
 
-.driver-results tr:hover {
-    background-color: #f1f1f1;  /* Row hover effect for better UX */
+.race-results tr:hover {
+    background-color: #f1f1f1; /* Hover effect for better UX */
 }
 
-/* Link Styling */
+/* Specific Column Widths */
+.race-results th:nth-child(1), .race-results td:nth-child(1) {
+    width: 10%;
+}
+
+.race-results th:nth-child(2), .race-results td:nth-child(2) {
+    width: 35%;
+    text-align: left; /* Left-align circuit names */
+}
+
+.race-results th:nth-child(3), .race-results td:nth-child(3) {
+    width: 25%;
+    text-align: left; /* Left-align driver names */
+}
+
+.race-results th:nth-child(4), .race-results td:nth-child(4) {
+    width: 15%;
+    text-align: center; /* Center-align positions */
+}
+
+.race-results th:nth-child(5), .race-results td:nth-child(5) {
+    width: 15%;
+    text-align: center; /* Center-align points */
+}
+
+/* Table Borders */
+.race-results table,
+.race-results th, 
+.race-results td {
+    border: none; /* Clean up the look by removing borders */
+    border-radius: 5px;
+}
+
+.race-results td:first-child {
+    border-left: 2px solid #ff69b4; /* Add a border to the first column for visual emphasis */
+}
+
+/* Additional Link Styling */
 a {
     color: #ff69b4;
     text-decoration: none;

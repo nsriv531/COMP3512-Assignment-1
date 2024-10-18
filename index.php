@@ -21,9 +21,10 @@
 
     <div class="content">
         <div class="description">
-            <p>Provide a brief description, styled nicely, about what this site is about, what technologies you are using, the group member names, and the URL for the GitHub repo.</p>
+            <p>Hello! My name is Nik, and this is my Web II Assignment 1 - coded in PHP for Randy Connolly.</p>
             <a href="browse.php" class="button">Browse 2022 Season</a>
             <a href="browse.php" class="link">Link to browse page</a>
+            <a href="https://github.com/nsriv531/COMP3512-Assignment-1" class="link">Github Link</a>
         </div>
         <class="image-section">
             <img src="https://i.pinimg.com/originals/6c/99/3d/6c993d7340744613096bb7f2cceed55a.gif"></img>

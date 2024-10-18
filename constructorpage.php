@@ -72,7 +72,7 @@ if (isset($_GET['constructorRef'])) {
                                 <td><?php echo htmlspecialchars($driver['round']); ?></td>
                                 <td><?php echo htmlspecialchars($driver['raceName']); ?></td>
                                 <td><?php echo htmlspecialchars($driver['forename']) . " " . htmlspecialchars($driver['surname']); ?></td>
-                                <td><?php echo htmlspecialchars($driver['grid']); ?></td>
+                                <td><?php echo htmlspecialchars($driver['position']); ?></td>
                                 <td><?php echo htmlspecialchars($driver['points']); ?></td>
                             </tr>
                         <?php endforeach; ?>
