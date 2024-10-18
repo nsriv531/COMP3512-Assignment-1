@@ -92,14 +92,37 @@ body {
 .driver-results table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: fixed; /* Makes sure columns have fixed widths */
 }
 
 .driver-results th, .driver-results td {
     padding: 12px 15px;  /* Increased padding for better readability */
-    text-align: left;
     border-bottom: 1px solid #ddd;
     word-wrap: break-word; /* Ensures long text breaks within the cell */
+}
+
+/* Define specific column widths */
+.driver-results th:nth-child(1), .driver-results td:nth-child(1) {
+    width: 10%;  /* Round */
+}
+
+.driver-results th:nth-child(2), .driver-results td:nth-child(2) {
+    width: 35%;  /* Circuit */
+    text-align: left;  /* Left-align circuit name */
+}
+
+.driver-results th:nth-child(3), .driver-results td:nth-child(3) {
+    width: 25%;  /* Driver */
+    text-align: left;  /* Left-align driver names */
+}
+
+.driver-results th:nth-child(4), .driver-results td:nth-child(4) {
+    width: 15%;  /* Position */
+    text-align: center;  /* Center-align position */
+}
+
+.driver-results th:nth-child(5), .driver-results td:nth-child(5) {
+    width: 15%;  /* Points */
+    text-align: center;  /* Center-align points */
 }
 
 .driver-results th {
@@ -110,7 +133,6 @@ body {
 
 .driver-results td {
     color: #333;
-    text-align: center; /* Center table data for consistency */
 }
 
 .driver-results tr:nth-child(even) {
