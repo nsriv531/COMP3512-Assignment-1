@@ -92,23 +92,36 @@ body {
 .driver-results table {
     width: 100%;
     border-collapse: collapse;
+    table-layout: fixed; /* Makes sure columns have fixed widths */
 }
 
 .driver-results th, .driver-results td {
-    padding: 10px;
+    padding: 12px 15px;  /* Increased padding for better readability */
     text-align: left;
     border-bottom: 1px solid #ddd;
+    word-wrap: break-word; /* Ensures long text breaks within the cell */
 }
 
 .driver-results th {
     background-color: #333;
     color: white;
+    text-align: center; /* Center text for table headers */
 }
 
 .driver-results td {
     color: #333;
+    text-align: center; /* Center table data for consistency */
 }
 
+.driver-results tr:nth-child(even) {
+    background-color: #f9f9f9;  /* Alternating row background color */
+}
+
+.driver-results tr:hover {
+    background-color: #f1f1f1;  /* Row hover effect for better UX */
+}
+
+/* Link Styling */
 a {
     color: #ff69b4;
     text-decoration: none;
