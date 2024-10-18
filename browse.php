@@ -8,6 +8,7 @@ $api_results_url = 'http://localhost/COMP3512-Assignment-1/api/results.php';
 $race = [];
 $qualifying = [];
 $results = [];
+$podium = [];
 $qualifying_response = ''; // Initialize variable to prevent undefined warning
 $results_response = '';    // Initialize variable to prevent undefined warning
 $races = []; 
@@ -38,8 +39,9 @@ if (isset($_GET['raceId'])) {
         echo "<p>Error: Could not fetch race results. Please check the API endpoint.</p>";
     } else {
         $results = json_decode($results_response, true);
+        // Extract the top 3 podium positions
+        $podium = array_slice($results, 0, 3);
     }
-
 } else {
     // Fetch all races for 2022 by default
     $race_response = file_get_contents($api_race_url);
@@ -55,11 +57,6 @@ if (json_last_error() !== JSON_ERROR_NONE) {
     echo "<p>Error decoding JSON: " . json_last_error_msg() . "</p>";
     $races = []; // Ensure $races is an empty array if there is an error
 }
-
-// Debugging: Log the race and results response (for testing purposes, remove later)
-echo "<pre>Race API Response: " . htmlspecialchars($race_response) . "</pre>";
-echo "<pre>Qualifying API Response: " . htmlspecialchars($qualifying_response) . "</pre>";
-echo "<pre>Results API Response: " . htmlspecialchars($results_response) . "</pre>";
 ?>
 
 <!DOCTYPE html>
@@ -90,7 +87,7 @@ echo "<pre>Results API Response: " . htmlspecialchars($results_response) . "</pr
                 <p>Race Name, Round #, Circuit: <?php echo htmlspecialchars($race['name']) . ", Round " . htmlspecialchars($race['round']); ?></p>
                 <p>Circuit Location: <?php echo htmlspecialchars($race['location']) . ", " . htmlspecialchars($race['country']); ?></p>
                 <p>Date of Race: <?php echo htmlspecialchars($race['date']); ?></p>
-                
+
                 <!-- Qualifying Results -->
                 <h3>Qualifying Results</h3>
                 <table>
@@ -109,15 +106,15 @@ echo "<pre>Results API Response: " . htmlspecialchars($results_response) . "</pr
                             <?php foreach ($qualifying as $q): ?>
                                 <tr>
                                     <td><?php echo htmlspecialchars($q['position']); ?></td>
-                                    <td><a href="drivers.php?driverRef=<?php echo htmlspecialchars($q['driverRef']); ?>"><?php echo htmlspecialchars($q['forename'] . " " . $q['surname']); ?></a></td>
+                                    <td><a href="driverpage.php?driverRef=<?php echo htmlspecialchars($q['driverRef']); ?>"><?php echo htmlspecialchars($q['forename'] . " " . $q['surname']); ?></a></td>
                                     <td>
-                                    <a href="constructors.php?constructorRef=<?php echo urlencode($q['constructorRef']); ?>">
-                            <?php echo htmlspecialchars($q['constructorName']); ?>
-                        </a>
+                                    <a href="constructorpage.php?constructorRef=<?php echo urlencode($q['constructorRef']); ?>">
+                                        <?php echo htmlspecialchars($q['constructorName']); ?>
+                                    </a>
                                 </td>
-                                <td><?php echo htmlspecialchars($q['q1']); ?></td> <!-- Q1 Time -->
-                    <td><?php echo htmlspecialchars($q['q2']); ?></td> <!-- Q2 Time -->
-                    <td><?php echo htmlspecialchars($q['q3']); ?></td> <!-- Q3 Time -->
+                                    <td><?php echo htmlspecialchars($q['q1']); ?></td>
+                                    <td><?php echo htmlspecialchars($q['q2']); ?></td>
+                                    <td><?php echo htmlspecialchars($q['q3']); ?></td>
                                 </tr>
                             <?php endforeach; ?>
                         <?php else: ?>
@@ -127,7 +124,24 @@ echo "<pre>Results API Response: " . htmlspecialchars($results_response) . "</pr
                 </table>
 
                 <!-- Race Results -->
+                 
+                <!-- Podium Section (Now Above Qualifying) -->
                 <h3>Race Results</h3>
+                <div class="podium">
+                    <?php if (!empty($podium)): ?>
+                        <?php foreach ($podium as $index => $driver): ?>
+                            <div class="position <?php echo ($index == 0) ? 'first' : (($index == 1) ? 'second' : 'third'); ?>">
+                                <h4><?php echo ($index == 0) ? '1st' : (($index == 1) ? '2nd' : '3rd'); ?></h4>
+                                <p><?php echo htmlspecialchars($driver['forename'] . " " . $driver['surname']); ?></p>
+                                <p><?php echo htmlspecialchars($driver['constructorName']); ?></p>
+                                <p>Laps: <?php echo htmlspecialchars($driver['laps']); ?></p>
+                                <p>Pts: <?php echo htmlspecialchars($driver['points']); ?></p>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <p>No podium data available.</p>
+                    <?php endif; ?>
+                </div>
                 <table>
                     <thead>
                         <tr>
@@ -143,8 +157,8 @@ echo "<pre>Results API Response: " . htmlspecialchars($results_response) . "</pr
                             <?php foreach ($results as $r): ?>
                                 <tr>
                                     <td><?php echo htmlspecialchars($r['grid']); ?></td>
-                                    <td><a href="drivers.php?driverRef=<?php echo htmlspecialchars($r['driverRef']); ?>"><?php echo htmlspecialchars($r['forename'] . " " . $r['surname']); ?></a></td>
-                                    <td><a href="constructors.php?constructorRef=<?php echo htmlspecialchars($r['constructorRef']); ?>"><?php echo htmlspecialchars($r['constructorName']); ?></a></td>
+                                    <td><a href="driverpage.php?driverRef=<?php echo htmlspecialchars($r['driverRef']); ?>"><?php echo htmlspecialchars($r['forename'] . " " . $r['surname']); ?></a></td>
+                                    <td><a href="constructorpage.php?constructorRef=<?php echo htmlspecialchars($r['constructorRef']); ?>"><?php echo htmlspecialchars($r['constructorName']); ?></a></td>
                                     <td><?php echo htmlspecialchars($r['laps']); ?></td>
                                     <td><?php echo htmlspecialchars($r['points']); ?></td>
                                 </tr>

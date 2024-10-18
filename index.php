@@ -26,7 +26,7 @@
             <a href="browse.php" class="link">Link to browse page</a>
         </div>
         <class="image-section">
-            <img src="https://i.pinimg.com/originals/08/33/4c/08334ce44a530ce81ba2ff9e5d29064b.gif"></img>
+            <img src="https://i.pinimg.com/originals/6c/99/3d/6c993d7340744613096bb7f2cceed55a.gif"></img>
         </div>
     </div>
 </body>

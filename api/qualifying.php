@@ -13,7 +13,7 @@ if (isset($_GET['ref'])) {
     // Fetch the qualifying results for the specified race
     $ref = $_GET['ref'];
     $query = "
-        SELECT qualifying.position, qualifying.q1, qualifying.q2, qualifying.q3, 
+        SELECT qualifying.position, qualifying.q1, qualifying.q2, qualifying.q3, qualifying.raceID,
                drivers.driverRef, drivers.forename, drivers.surname, 
                constructors.name as constructorName, constructors.constructorRef
         FROM qualifying
