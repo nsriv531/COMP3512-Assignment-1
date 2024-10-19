@@ -204,4 +204,7 @@ if (json_last_error() !== JSON_ERROR_NONE) {
         <?php endif; ?>
     </div>
 </body>
+<div class="footer">
+        <p>&copy; 2024 F1 Dashboard. All rights reserved. <a href="privacy.php">Privacy Policy</a></p>
+    </div>
 </html>
