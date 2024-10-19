@@ -177,7 +177,7 @@ if (json_last_error() !== JSON_ERROR_NONE) {
                 <table>
                     <thead>
                         <tr>
-                            <th>Rnd</th>
+                            <th>Round</th>
                             <th>Circuit</th>
                             <th>Date</th>
                             <th>Location</th>
