@@ -1,6 +1,6 @@
 <?php
 // Include the database connection
-include('../dbconnection.php');
+include('..database/dbconnection.php');
 
 // Set the correct content type for JSON output
 header('Content-Type: application/json');

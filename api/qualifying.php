@@ -1,7 +1,8 @@
 <?php
 // Include the database connection
 ob_start();
-include('../dbconnection.php');
+
+include('..database/dbconnection.php');
 
 // Clear any output before the header
 ob_clean();

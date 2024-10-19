@@ -3,7 +3,7 @@
 
 ob_start();
 
-include('../dbconnection.php');
+include('..database/dbconnection.php');
 
 ob_clean();
 // Set the correct content type for JSON output
