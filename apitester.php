@@ -58,6 +58,10 @@
                 </tr>
                 <tr>
                     <td><a href="/COMP3512-Assignment-1/api/races.php?ref=2022">/api/races.php?ref=2022</a></td>
+                    <td>Returns just the specified race.<i>/api/races/season/2022</i></td>
+                </tr>
+                <tr>
+                    <td><a href="/COMP3512-Assignment-1/api/races.php">/api/races.php</a></td>
                     <td>Returns the races within the 2022 season ordered by round, e.g., <i>/api/races/season/2022</i></td>
                 </tr>
                 <tr>

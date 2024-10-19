@@ -22,7 +22,7 @@ if (isset($_GET['ref'])) {
         JOIN races ON results.raceId = races.raceId
         JOIN constructors ON results.constructorId = constructors.constructorId
         WHERE results.raceId = :ref
-        ORDER BY results.grid ASC
+        ORDER BY results.laps DESC, results.points DESC
     ";
     $stmt = $db->prepare($query);
     $stmt->bindValue(':ref', $ref, SQLITE3_INTEGER); // Assuming raceId is an integer

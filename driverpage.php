@@ -84,7 +84,7 @@ if (isset($_GET['driverRef'])) {
                             <tr>
                                 <td><?php echo htmlspecialchars($result['round']); ?></td>
                                 <td><?php echo htmlspecialchars($result['name']); ?></td> <!-- 'name' is the correct key -->
-                                <td><?php echo htmlspecialchars($result['grid']); ?></td>
+                                <td><?php echo htmlspecialchars($result['position']); ?></td>
                                 <td><?php echo htmlspecialchars($result['points']); ?></td>
                             </tr>
                         <?php endforeach; ?>

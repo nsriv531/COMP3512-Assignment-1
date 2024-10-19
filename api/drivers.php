@@ -26,7 +26,7 @@ if (isset($_GET['ref'])) {
                 $driver = $result->fetchArray(SQLITE3_ASSOC);
                 if ($driver) {
                     // Fetch race results for the driver
-                    $query_results = "SELECT ra.round, ra.name, r.grid, r.points 
+                    $query_results = "SELECT ra.round, ra.name, r.position, r.points 
                                       FROM results r 
                                       JOIN races ra ON r.raceId = ra.raceId 
                                       WHERE r.driverId = :driverId AND year = 2022";

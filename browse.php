@@ -83,11 +83,11 @@ if (json_last_error() !== JSON_ERROR_NONE) {
     <div class="container">
         <?php if (isset($raceId) && !empty($race)): ?>
             <div class="race-details">
-                <h2>Results for <?php echo htmlspecialchars($race['name']); ?></h2>
-                <p><strong>Circuit: </strong><?php echo htmlspecialchars($race['name']) . ", Round " . htmlspecialchars($race['round']); ?></p>
+                <h2>Race Name: <?php echo htmlspecialchars($race['name']); ?></h2>
+                <p><strong>Circuit: </strong><?php echo htmlspecialchars($race['circuitName']) . ", Round: " . htmlspecialchars($race['round']); ?></p>
                 <p><strong>Circuit Location: </strong><?php echo htmlspecialchars($race['location']) . ", " . htmlspecialchars($race['country']); ?></p>
                 <p><strong>Date of Race:  </strong><?php echo htmlspecialchars($race['date']); ?></p>
-
+                <p><strong>URL:</strong> <a href="<?php echo htmlspecialchars($race['url']); ?>" target="_blank">Link</a></p>
                 <!-- Qualifying Results -->
                 <h3>Qualifying Results</h3>
                 <table>

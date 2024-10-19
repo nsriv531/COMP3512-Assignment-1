@@ -17,7 +17,7 @@ if (isset($_GET['ref'])) {
     // Fetch the specified race using raceId
     $ref = $_GET['ref'];
     $query = "
-        SELECT races.raceId, races.name, races.round, races.year, races.date, circuits.name as circuitName, circuits.location, circuits.country
+        SELECT races.raceId, races.name, races.round, races.year, races.date, races.url, circuits.name as circuitName, circuits.location, circuits.country
         FROM races 
         JOIN circuits ON races.circuitId = circuits.circuitId
         WHERE races.raceId = :ref
@@ -36,7 +36,7 @@ if (isset($_GET['ref'])) {
 } else {
     // Fetch all races for 2022 season, include raceId in the result
     $query = "
-        SELECT races.raceId, races.name, races.round, races.year, races.date, circuits.name as circuitName, circuits.location, circuits.country
+        SELECT races.raceId, races.name, races.round, races.year, races.date, races.url, circuits.name as circuitName, circuits.location, circuits.country
         FROM races 
         JOIN circuits ON races.circuitId = circuits.circuitId
         WHERE races.year = 2022
