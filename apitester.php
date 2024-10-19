@@ -57,8 +57,8 @@
                     <td>Returns the drivers within a given race, e.g., <i>/api/drivers/race/1106</i></td>
                 </tr>
                 <tr>
-                    <td><a href="/COMP3512-Assignment-1/api/races.php?ref=2022">/api/races.php?ref=2022</a></td>
-                    <td>Returns just the specified race.<i>/api/races/season/2022</i></td>
+                    <td><a href="/COMP3512-Assignment-1/api/races.php?ref=1106">/api/races.php?ref=1106</a></td>
+                    <td>Returns just the specified race with ref=</td>
                 </tr>
                 <tr>
                     <td><a href="/COMP3512-Assignment-1/api/races.php">/api/races.php</a></td>
