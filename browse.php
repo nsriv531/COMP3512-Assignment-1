@@ -173,7 +173,7 @@ if (json_last_error() !== JSON_ERROR_NONE) {
         <?php else: ?>
             <!-- If no race selected, show race list -->
             <div class="race-list">
-                <h2>Races for 2022 Season</h2>
+                <h2>Races for 2022</h2>
                 <table>
                     <thead>
                         <tr>
