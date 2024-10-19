@@ -30,7 +30,7 @@ if (isset($_GET['constructorRef'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>F1 Dashboard - Constructor Details</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Lobster&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/constructorpage.css"> <!-- Link to your custom CSS file -->
+    <link rel="stylesheet" href="../css/constructorpage.css"> <!-- Link to your custom CSS file -->
     <link rel="icon" href="https://fav.farm/🏎️" />
 </head>
 <body>

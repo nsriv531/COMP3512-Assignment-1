@@ -67,7 +67,7 @@ if (json_last_error() !== JSON_ERROR_NONE) {
     <title>F1 Dashboard Project - Browse</title>
     <!-- Include Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Lobster&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/browse.css"> <!-- Link to external CSS -->
+    <link rel="stylesheet" href="../css/browse.css"> <!-- Link to external CSS -->
     <link rel="icon" href="https://fav.farm/🏎️" />
 </head>
 <body>
@@ -177,7 +177,7 @@ if (json_last_error() !== JSON_ERROR_NONE) {
                 <table>
                     <thead>
                         <tr>
-                            <th>Round</th>
+                            <th>Rnd</th>
                             <th>Circuit</th>
                             <th>Date</th>
                             <th>Location</th>
