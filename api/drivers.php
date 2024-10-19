@@ -29,7 +29,8 @@ if (isset($_GET['ref'])) {
                     $query_results = "SELECT ra.round, ra.name, r.position, r.points 
                                       FROM results r 
                                       JOIN races ra ON r.raceId = ra.raceId 
-                                      WHERE r.driverId = :driverId AND year = 2022";
+                                      WHERE r.driverId = :driverId AND year = 2022
+                                      ORDER BY r.points DESC, r.position DESC";
                     
                     $stmt_results = $db->prepare($query_results);
                     $stmt_results->bindValue(':driverId', $driver['driverId'], SQLITE3_INTEGER);

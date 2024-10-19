@@ -102,25 +102,26 @@ if (json_last_error() !== JSON_ERROR_NONE) {
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if (is_array($qualifying) && count($qualifying) > 0): ?>
-                            <?php foreach ($qualifying as $q): ?>
-                                <tr>
-                                    <td><?php echo htmlspecialchars($q['position']); ?></td>
-                                    <td><a href="driverpage.php?driverRef=<?php echo htmlspecialchars($q['driverRef']); ?>"><?php echo htmlspecialchars($q['forename'] . " " . $q['surname']); ?></a></td>
-                                    <td>
-                                    <a href="constructorpage.php?constructorRef=<?php echo urlencode($q['constructorRef']); ?>">
-                                        <?php echo htmlspecialchars($q['constructorName']); ?>
-                                    </a>
-                                </td>
-                                    <td><?php echo htmlspecialchars($q['q1']); ?></td>
-                                    <td><?php echo htmlspecialchars($q['q2']); ?></td>
-                                    <td><?php echo htmlspecialchars($q['q3']); ?></td>
-                                </tr>
-                            <?php endforeach; ?>
-                        <?php else: ?>
-                            <tr><td colspan="6">No qualifying data available.</td></tr>
-                        <?php endif; ?>
-                    </tbody>
+    <?php if (is_array($qualifying) && count($qualifying) > 0): ?>
+        <?php foreach ($qualifying as $q): ?>
+            <tr>
+                <td><?php echo htmlspecialchars($q['position']); ?></td>
+                <td><a href="driverpage.php?driverRef=<?php echo htmlspecialchars($q['driverRef']); ?>"><?php echo htmlspecialchars($q['forename'] . " " . $q['surname']); ?></a></td>
+                <td>
+                    <a href="constructorpage.php?constructorRef=<?php echo urlencode($q['constructorRef']); ?>">
+                        <?php echo htmlspecialchars($q['constructorName']); ?>
+                    </a>
+                </td>
+                <!-- Remove first character from Q1, Q2, Q3 -->
+                <td><?php echo htmlspecialchars(substr($q['q1'], 1)); ?></td>
+                <td><?php echo htmlspecialchars(substr($q['q2'], 1)); ?></td>
+                <td><?php echo htmlspecialchars(substr($q['q3'], 1)); ?></td>
+            </tr>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <tr><td colspan="6">No qualifying data available.</td></tr>
+    <?php endif; ?>
+</tbody>
                 </table>
 
                 <!-- Race Results -->
@@ -172,7 +173,7 @@ if (json_last_error() !== JSON_ERROR_NONE) {
         <?php else: ?>
             <!-- If no race selected, show race list -->
             <div class="race-list">
-                <h2>2022 Races</h2>
+                <h2>Races for 2022 Season</h2>
                 <table>
                     <thead>
                         <tr>
@@ -188,7 +189,7 @@ if (json_last_error() !== JSON_ERROR_NONE) {
                             <?php foreach ($races as $race): ?>
                                 <tr>
                                     <td><?php echo htmlspecialchars($race['round']); ?></td>
-                                    <td><?php echo htmlspecialchars($race['circuitName']); ?></td>
+                                    <td><?php echo htmlspecialchars($race['name']); ?></td>
                                     <td><?php echo htmlspecialchars($race['date']); ?></td>
                                     <td><?php echo htmlspecialchars($race['location'] . ', ' . $race['country']); ?></td>
                                     <td><a href="browse.php?raceId=<?php echo htmlspecialchars($race['raceId']); ?>" class="button">Results</a></td>
