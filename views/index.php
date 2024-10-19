@@ -14,7 +14,7 @@
     <div class="flame-right"></div>
     
     <div class="header">
-        <h1>F1 Dashboard Project</h1>
+        <h1>F1     Dashboard      Project</h1>
         <div class="nav-links">
             <a href="index.php">Home</a>
             <a href="browse.php">Browse</a>

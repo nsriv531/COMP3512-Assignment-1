@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/apitester.css">
     <!-- Import Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://fav.farm/🏎️" />
 </head>
 <body>
     <div class="header">
@@ -80,7 +81,7 @@
         </table>
     </div>
     <div class="footer">
-        <p>&copy; 2024 F1 Dashboard. All rights reserved. <a href="privacy.php">Privacy Policy</a></p>
+        <p>&copy; 2024 F1 Dashboard. All rights reserved.</p>
     </div>
 </body>
 </html>

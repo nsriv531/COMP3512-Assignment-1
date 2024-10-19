@@ -96,4 +96,7 @@ if (isset($_GET['driverRef'])) {
         </div>
     </div>
 </body>
+<div class="footer">
+        <p>&copy; 2024 F1 Dashboard. All rights reserved. <a href="privacy.php">Privacy Policy</a></p>
+    </div>
 </html>
